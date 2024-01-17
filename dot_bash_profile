@@ -1,0 +1,43 @@
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/leon/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/leon/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/leon/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/leon/opt/anaconda3/bin:$PATH"
+    fi
+fi
+
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
+if type brew &> /dev/null; then
+    HOMEBREW_PREFIX=$(brew --prefix)
+    for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do
+		export PATH=$d:$PATH;
+    done;
+    for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do
+		export MANPATH=$d:$MANPATH;
+    done;
+fi;
+
+unset __conda_setup
+# <<< conda initialize <<<
+
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+
+#for tap in core cask{,-fonts,-drivers,-versions} command-not-found; do
+#    brew tap --custom-remote --force-auto-update "homebrew/${tap}" "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-${tap}.git"
+#done
+export RQSDK_LICENSE=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 
+export RQDATAC_CONF=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 

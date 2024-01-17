@@ -1,0 +1,71 @@
+set nocompatible
+set shiftwidth=4
+set smarttab
+set tabstop=4
+set autoindent
+set hlsearch
+set encoding=utf-8
+set wrap
+set number
+set relativenumber
+set title
+set shortmess+=I
+set laststatus=2
+set backspace=indent,eol,start
+set hidden
+
+set ignorecase
+set smartcase
+
+set incsearch
+
+set noerrorbells visualbell t_vb=
+
+set mouse+=a
+
+syntax enable
+filetype indent on
+filetype on
+
+let mapleader=" "
+
+" Navigation
+nnoremap <Leader>wh :bprevious<CR>
+nnoremap <Leader>wl :bnext<CR>
+nnoremap <Leader>wd :bd<CR>
+nnoremap <Leader>wc :bd<CR>
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <Leader>wh <c-w>h
+nnoremap <Leader>wj <c-w>j
+nnoremap <Leader>wk <c-w>k
+nnoremap <Leader>wl <c-w>l
+nnoremap <Leader>wc <c-w>c
+nnoremap <Leader>wd <c-w>c
+nnoremap <Leader>ws :split<CR>
+nnoremap <Leader>wv :vsplit<CR>
+
+" edit
+nnoremap <TAB> >>
+nnoremap <s-TAB> <<
+vnoremap <TAB> >gv
+vnoremap <s-TAB> <gv
+
+nnoremap <Leader>gd :action GotoDeclaration<CR>
+nnoremap <Leader>gi :action GotoImplementation<CR>
+nnoremap <Leader>ge :action GotoNextError<CR>
+nnoremap <Leader>gE :action GotoPreviousError<CR>
+nnoremap <Leader>gu :action FindUsages<CR>
+
+nnoremap <Leader>nh :noh<CR>
+
+vnoremap J :move '>+1<CR>gv-gv
+vnoremap K :move '<-2<CR>gv-gv
+
+vnoremap p "_dP
+
+inoremap jk <Esc>
+
