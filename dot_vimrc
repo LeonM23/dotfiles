@@ -29,12 +29,19 @@ filetype on
 
 let mapleader=" "
 
-" Navigation
-nnoremap <Leader>wh :bprevious<CR>
-nnoremap <Leader>wl :bnext<CR>
-nnoremap <Leader>wd :bd<CR>
-nnoremap <Leader>wc :bd<CR>
+" Buffers Navigation
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
+nnoremap <Leader>bh :bprevious<CR>
+nnoremap <Leader>bl :bnext<CR>
+nnoremap <Leader>bk :blast<CR>
+nnoremap <Leader>bj :bfirst<CR>
+nnoremap <Leader>bd :bd<CR>
+nnoremap <Leader>bc :bd<CR>
+nnoremap <Leader>bs :buffers<CR>
+nnoremap <Leader>be :edit 
 
+" Windows Navigation
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k

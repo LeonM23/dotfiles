@@ -149,7 +149,7 @@ source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export RQSDK_LICENSE=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 
 export RQDATAC_CONF=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 
 
-export CODESPACES=true
+
 export GITHUB_API_URL=http://124.220.157.23:8800
 export GITHUB_SERVER_URL=https://github.com
 export GITHUB_TOKEN=MTA4Ni5hNWIwZjI0ODkyZjMwMjliZDcwMTczNDQ3ZDUyNjE0OA==
@@ -168,3 +168,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+
+
+
+export CODESPACES=true
