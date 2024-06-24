@@ -1,0 +1,16 @@
+
+
+# Ignore on Windows
+{{- if eq .chezmoi.os "windows" }}
+.bash_profile
+.bashrc
+.zshrc
+.zshrc.pre-oh-my-zsh
+.zprofile
+.p10k.zsh
+.pip/pip.config
+{{- else }}
+theme.omp.json
+AppData/Roaming/pip/pip.ini
+{{- end }}
+
