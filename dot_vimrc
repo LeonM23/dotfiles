@@ -36,7 +36,6 @@ nnoremap <Leader>bh :bprevious<CR>
 nnoremap <Leader>bl :bnext<CR>
 nnoremap <Leader>bk :blast<CR>
 nnoremap <Leader>bj :bfirst<CR>
-nnoremap <Leader>bd :bd<CR>
 nnoremap <Leader>bc :bd<CR>
 nnoremap <Leader>bs :buffers<CR>
 nnoremap <Leader>be :edit 
@@ -51,9 +50,9 @@ nnoremap <Leader>wj <c-w>j
 nnoremap <Leader>wk <c-w>k
 nnoremap <Leader>wl <c-w>l
 nnoremap <Leader>wc <c-w>c
-nnoremap <Leader>wd <c-w>c
-nnoremap <Leader>ws :split<CR>
-nnoremap <Leader>wv :vsplit<CR>
+nnoremap <Leader>w- :split<CR>
+nnoremap <Leader>w| :vsplit<CR>
+nnoremap <Leader>wt :bo term<CR>
 
 " edit
 nnoremap <TAB> >>
@@ -73,6 +72,8 @@ vnoremap J :move '>+1<CR>gv-gv
 vnoremap K :move '<-2<CR>gv-gv
 
 vnoremap p "_dP
+
+nnoremap <c-s> :w<CR> 'save file'
 
 inoremap jk <Esc>
 
