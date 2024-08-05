@@ -172,4 +172,3 @@ unset __conda_setup
 
 
 
-export CODESPACES=true
