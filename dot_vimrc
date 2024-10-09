@@ -18,12 +18,10 @@ set ignorecase
 set smartcase
 set incsearch
 
-set foldmethod = indent
-set foldnestmax = 10
+set foldmethod=indent
+set foldnestmax=10
 set nofoldenable
-set foldlevel = 2
-
-set noerrorbells visualbell t_vb=
+set foldlevel=2
 
 set mouse+=a
 

@@ -19,23 +19,22 @@ set smartcase
 
 set incsearch
 
-set noerrorbells visualbell t_vb=
-
 set mouse+=a
 
 syntax enable
 filetype indent on
 filetype on
 
+let mapleader=" "
+
 " plugins
 set surround
+set easymotion
 set highlightedyank
 set NERDTree
 set ideajoin
 set clipboard+=unamed
 set clipboard+=ideaput
-
-let mapleader=" "
 
 " Navigation
 nnoremap <Leader>wh :bprevious<CR>
