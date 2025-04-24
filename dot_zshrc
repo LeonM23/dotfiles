@@ -108,8 +108,22 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cls='clear'
+
+alias gs='git status'
+alias ga='git add'
+alias gc="git commit -m"
+
+alias lla='ls -lha'
+alias ll='ls -lh'
+alias l='ls'
+
+alias mkdir='mkdir -p'
+alias mv='mv -i'
+alias cp='cp -i'
+
+alias zm='chezmoi'
+alias vim='nvim'
 
 ## 输入法，ibus和fcitx
 # export GTK_IM_MODULE=fcitx
@@ -144,8 +158,13 @@ source $ZSH/oh-my-zsh.sh
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 export RQSDK_LICENSE=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 
 export RQDATAC_CONF=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 
 
