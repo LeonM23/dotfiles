@@ -1,0 +1,9 @@
+# ========== 全局配置 ==========
+[global]
+# 使用清华大学 PyPI 镜像以加快包的下载速度
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+
+# ========== 安装配置 ==========
+[install]
+# 信任的下载渠道（避免 SSL 警告）
+trusted-host = pypi.tuna.tsinghua.edu.cn

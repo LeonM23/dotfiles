@@ -1,16 +1,32 @@
-alias cls='clear'
+# ============================================================================
+# dot_bashrc - Bash 交互式Shell配置文件
+# ============================================================================
+# 说明: 这是 Bash 的交互式shell configuration，定义了别名、函数等
+# 用途: 包含所有用户自定义的别名和环境配置
+# 适配系统: macOS, Linux (所有使用 bash 的系统)
+# 执行时机: 每次打开交互式shell时加载
+# ============================================================================
 
-alias gs='git status'
-alias ga='git add'
-alias gc="git commit -m"
+# ========== 文件系统相关别名 ==========
+alias cls='clear'                  # 清屏 (Windows cmd 风格)
 
-alias lla='ls -lha'
-alias ll='ls -lh'
-alias l='ls'
+# ========== Git 相关别名 ==========
+alias gs='git status'              # 查看 git 状态
+alias ga='git add'                 # git 添加文件到暂存区
+alias gc="git commit -m"           # git 提交代码 (快捷方式)
 
-alias mkdir='mkdir -p'
-alias mv='mv -i'
-alias cp='cp -i'
+# ========== 列表和目录相关别名 ==========
+alias lla='ls -lha'                # 列出所有文件 (包括隐藏文件), 带详细信息
+alias ll='ls -lh'                  # 列出文件, 带详细信息和人类可读的文件大小
+alias l='ls'                       # ls 的快捷别名
 
-alias zm='chezmoi'
-alias vim='nvim'
+# ========== 文件操作安全别名 ==========
+alias mkdir='mkdir -p'             # 创建目录时自动创建父目录
+alias mv='mv -i'                   # 移动文件时交互式确认 (避免覆盖)
+alias cp='cp -i'                   # 复制文件时交互式确认 (避免覆盖)
+
+# ========== 工具别名 ==========
+alias zm='chezmoi'                 # chezmoi 点文件管理工具的快捷别名
+alias vim='nvim'                   # 使用 neovim 替代 vim
+alias jnote='jupyter notebook'     # 启动 Jupyter Notebook
+alias jlab='jupyter lab'           # 启动 Jupyter Lab

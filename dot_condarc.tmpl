@@ -1,0 +1,64 @@
+# ============================================================================
+# dot_condarc.tmpl - Conda package manager configuration (templated)
+# ============================================================================
+# Description: Configures Conda download mirrors and storage paths
+# Purpose:
+#   - Set Conda channels to use mirrors for faster downloads
+#   - Automatically set env and package cache paths based on OS
+# Applies to: All Anaconda/Miniconda users (Windows, Linux, macOS)
+# Used when: Creating environments or installing/updating packages
+# ============================================================================
+
+# ========== Conda download channels ==========
+channels:
+  # Tsinghua University mirror (China) - provides conda-forge, pytorch, etc.
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  # Official default channel (fallback)
+  - defaults
+
+{{- if eq .chezmoi.os "windows" }}
+# ========== Windows configuration ==========
+# Store Conda envs and package cache on D: drive to save space on C:
+
+# Conda virtual environment paths
+envs_dirs:
+  - D:\Conda\envs                  # Primary env location
+  - {{ .chezmoi.homeDir }}\AppData\Local\miniconda3\envs  # Miniconda default (fallback)
+
+# Conda package cache paths
+pkgs_dirs:
+  - D:\Conda\pkgs                  # Package cache (off C: drive)
+  - {{ .chezmoi.homeDir }}\AppData\Local\miniconda3\pkgs  # Miniconda default (fallback)
+
+{{- else }}
+# ========== Linux/macOS configuration ==========
+# Store Conda envs and package cache under the user home directory
+
+# Conda virtual environment paths
+envs_dirs:
+  - ~/.conda/envs                  # Conda standard path
+  - ~/miniconda3/envs              # Miniconda default (fallback)
+
+# Conda package cache paths
+pkgs_dirs:
+  - ~/.conda/pkgs                  # Conda standard path
+  - ~/miniconda3/pkgs              # Miniconda default (fallback)
+
+{{- end }}
+
+# ========== General options ==========
+# Auto-activate base environment on shell startup
+# auto_activate_base: true
+
+# Show channel URLs in output (useful for debugging)
+show_channel_urls: false
+
+# Enable SSL verification for HTTPS channels
+ssl_verify: true
+
+# Package index options (optional)
+# use_local: false
+# offline: false

@@ -1,73 +1,92 @@
-set nocompatible
-set shiftwidth=4
-set smarttab
-set tabstop=4
-set autoindent
-set hlsearch
-set encoding=utf-8
-set wrap
-set number
-set relativenumber
-set title
-set shortmess+=I
-set laststatus=2
-set backspace=indent,eol,start
-set hidden
+# ============================================================================
+# dot_ideavimrc - IdeaVim 配置文件 (IntelliJ IDEA/PyCharm 等 IDE)
+# ============================================================================
+# 说明: 这是 JetBrains IDE (IntelliJ IDEA、PyCharm、WebStorm 等) 的 Vim 模拟插件配置
+# 用途: 在 IDE 中启用 Vim 快捷键和功能
+# 适用: IntelliJ IDEA, PyCharm, WebStorm, CLion, GoLand 等 JetBrains IDE
+# 执行时机: IDE 启动插件加载时
+# 主要功能: 基础设置、插件加载、快捷键绑定、导航命令
+# ============================================================================
 
-set ignorecase
-set smartcase
+# ========== 基础编辑配置 ==========
+set nocompatible                   # 不兼容 Vi 的模式
+set shiftwidth=4                   # 缩进宽度为 4 个空格
+set smarttab                       # 智能 Tab 处理
+set tabstop=4                      # Tab 字符宽度为 4 个空格
+set autoindent                     # 自动缩进
+set hlsearch                       # 高亮搜索匹配
+set encoding=utf-8                 # 编码为 UTF-8
+set wrap                           # 自动折行
+set number                         # 显示行号
+set relativenumber                 # 显示相对行号 (便于批量操作)
+set title                          # 显示窗口标题
+set shortmess+=I                   # 隐藏启动屏幕
+set laststatus=2                   # 始终显示状态栏
+set backspace=indent,eol,start     # Backspace 行为
+set hidden                         # 允许隐藏未保存的缓冲区
 
-set incsearch
+# ========== 搜索和大小写配置 ==========
+set ignorecase                     # 搜索不区分大小写
+set smartcase                      # 如果有大写字母，则区分大小写
+set incsearch                      # 增量搜索（边输入边高亮）
 
-set mouse+=a
+# ========== 鼠标和语法配置 ==========
+set mouse+=a                       # 启用鼠标
+syntax enable                      # 启用语法高亮
+filetype indent on                 # 开启文件类型检测缩进
+filetype on                        # 开启文件类型检测
 
-syntax enable
-filetype indent on
-filetype on
+# ========== Leader 键定义 ==========
+let mapleader=" "                  # 定义 Leader 键为空格
 
-let mapleader=" "
+# ========== 插件配置 ==========
+# 加载各个 IdeaVim 扩展插件
+set surround                       # Surround.vim 插件: 支持括号/引号等包装操作
+set easymotion                     # EasyMotion 插件: 快速导航
+set highlightedyank                # 高亮复制
+set NERDTree                       # NERDTree 插件: 文件树浏览
+set ideajoin                       # IDE 智能合并行
+set clipboard+=unamed              # 使用系统剪贴板
+set clipboard+=ideaput             # IDE 粘贴支持
 
-" plugins
-set surround
-set easymotion
-set highlightedyank
-set NERDTree
-set ideajoin
-set clipboard+=unamed
-set clipboard+=ideaput
+# ========== 缓冲区导航 ==========
+nnoremap <Leader>wh :bprevious<CR>    # 上一个缓冲区
+nnoremap <Leader>wl :bnext<CR>        # 下一个缓冲区
+nnoremap <Leader>wd :bd<CR>           # 删除当前缓冲区
+nnoremap <Leader>wc :bd<CR>           # 关闭当前缓冲区
 
-" Navigation
-nnoremap <Leader>wh :bprevious<CR>
-nnoremap <Leader>wl :bnext<CR>
-nnoremap <Leader>wd :bd<CR>
-nnoremap <Leader>wc :bd<CR>
+# ========== 窗口导航 ==========
+# 使用 Ctrl+hjkl 快速切换窗口
+nnoremap <c-h> <c-w>h                # 移到左窗口
+nnoremap <c-j> <c-w>j                # 移到下窗口
+nnoremap <c-k> <c-w>k                # 移到上窗口
+nnoremap <c-l> <c-w>l                # 移到右窗口
 
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-nnoremap <Leader>wh <c-w>h
-nnoremap <Leader>wj <c-w>j
-nnoremap <Leader>wk <c-w>k
-nnoremap <Leader>wl <c-w>l
-nnoremap <Leader>wc <c-w>c
-nnoremap <Leader>wd <c-w>c
-nnoremap <Leader>ws :split<CR>
-nnoremap <Leader>wv :vsplit<CR>
+# 使用 Leader+w 快捷键管理窗口
+nnoremap <Leader>wh <c-w>h            # 移到左窗口 (Leader 风格)
+nnoremap <Leader>wj <c-w>j            # 移到下窗口 (Leader 风格)
+nnoremap <Leader>wk <c-w>k            # 移到上窗口 (Leader 风格)
+nnoremap <Leader>wl <c-w>l            # 移到右窗口 (Leader 风格)
+nnoremap <Leader>wc <c-w>c            # 关闭当前窗口
+nnoremap <Leader>wd <c-w>c            # 删除当前窗口
+nnoremap <Leader>ws :split<CR>        # 水平分割窗口
+nnoremap <Leader>wv :vsplit<CR>       # 竖直分割窗口
 
-" edit
-nnoremap <TAB> >>
-nnoremap <s-TAB> <<
-vnoremap <TAB> >gv
-vnoremap <s-TAB> <gv
+# ========== 编辑操作快捷键 ==========
+nnoremap <TAB> >>                     # Tab 键右缩进
+nnoremap <s-TAB> <<                   # Shift+Tab 键左缩进
+vnoremap <TAB> >gv                    # 选中模式下右缩进
+vnoremap <s-TAB> <gv                  # 选中模式下左缩进
 
-nnoremap <Leader>ff :ReformatCode<CR>
+# ========== IDE 功能快捷键 ==========
+nnoremap <Leader>ff :ReformatCode<CR> # 代码格式化
 
-nnoremap gd :action GotoDeclaration<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap ge :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
-nnoremap gu :action FindUsages<CR>
+# ========== 代码导航快捷键 ==========
+nnoremap gd :action GotoDeclaration<CR>     # 转到声明
+nnoremap gi :action GotoImplementation<CR>  # 转到实现
+nnoremap ge :action GotoNextError<CR>       # 转到下一个错误
+nnoremap gE :action GotoPreviousError<CR>   # 转到上一个错误
+nnoremap gu :action FindUsages<CR>          # 查找用法
 
 nnoremap <Leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader>nh :noh<CR>

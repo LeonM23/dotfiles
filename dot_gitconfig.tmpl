@@ -1,0 +1,49 @@
+# ============================================================================
+# dot_gitconfig.tmpl - Git 全局配置文件（模板化）
+# ============================================================================
+# 说明: Git 的全局配置文件，根据操作系统自动调整配置
+# 用途: 配置 Git 提交中使用的个人信息、换行符处理、凭据存储等
+# 适配系统: Windows, macOS, Linux (跨平台支持)
+# 位置: ~/.gitconfig
+# 模板功能: 根据操作系统自动应用不同的配置
+# ============================================================================
+
+# ========== 用户信息配置 ==========
+# 提交代码时会使用的用户名和邮箱地址
+[user]
+	name = qzmei
+	email = qzmei1997@gmail.com
+
+# ========== 换行符处理 - 跨平台配置 ==========
+# Windows: autocrlf = true (自动转换 CRLF <-> LF)
+# Linux/macOS: autocrlf = input (仅在 commit 时转换 CRLF -> LF)
+[core]
+	autocrlf = {{ if eq .chezmoi.os "windows" }}true{{ else }}input{{ end }}
+	safecrlf = warn                    # 防止混合换行符
+
+# ========== 凭据存储 - Windows 特定配置 ==========
+{{ if eq .chezmoi.os "windows" }}
+# Windows 上使用系统凭据管理器
+[credential]
+	helper = manager-core
+{{ end }}
+
+# ========== 上游分支配置 ==========
+# 处理新上游分支的正上游配置
+[init]
+	defaultBranch = master
+
+# ========== Push 配置 ==========
+# 自动为本地分支配置上游（简化 push 前的重复配置）
+[push]
+	autoSetupRemote = true
+
+# ========== 其他优化配置 ==========
+[pull]
+	rebase = false                     # pull 时不自动 rebase
+
+[fetch]
+	prune = true                       # 自动清理已删除的远程分支的本地追踪
+
+[diff]
+	colorMoved = zebra                 # 高亮代码移动

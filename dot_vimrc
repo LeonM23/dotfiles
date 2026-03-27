@@ -1,81 +1,102 @@
-set nocompatible
-set shiftwidth=4
-set smarttab
-set tabstop=4
-set autoindent
-set hlsearch
-set encoding=utf-8
-set wrap
-set number
-set relativenumber
-set title
-set shortmess+=I
-set laststatus=2
-set backspace=indent,eol,start
-set hidden
+" ============================================================================
+" dot_vimrc - Vim/Neovim 配置文件
+" ============================================================================
+" 说明: Vim 或 Neovim 的配置文件，包含布局、键位绑定、自定义键映射
+" 用途: 配置 Vim 编辑器的行为、插件支持、键盘绑定
+" 适用: macOS, Linux, Windows (vim/nvim)
+" ============================================================================
 
-set ignorecase
-set smartcase
-set incsearch
+" ========== 基础编辑配置 ==========
+set nocompatible                   " 禁用 Vi 兼容模式
+set shiftwidth=4                   " 缩进宽度为 4 个空格
+set smarttab                       " 智能 Tab 处理
+set tabstop=4                      " Tab 字符宽度为 4 个空格
+set autoindent                     " 自动缩进
+set hlsearch                       " 高亮搜索匹配
+set encoding=utf-8                 " 编码为 UTF-8
+set wrap                           " 自动折行
+set number                         " 显示行号
+set relativenumber                 " 显示相对行号 (用于快速导航)
+set title                          " 显示文件名在窗口标题
+set shortmess+=I                   " 隐藏启动屏幕
+set laststatus=2                   " 始终显示状态栏
+set backspace=indent,eol,start     " Backspace 行为
+set hidden                         " 允许隐藏未保存的缓冲区
 
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
+" ========== 搜索配置 ==========
+set ignorecase                     " 搜索不区分大小写
+set smartcase                      " 搜索有大写时区分大小写
+set incsearch                      " 增量搜索 (边输入边高亮)
 
-set mouse+=a
+" ========== 折叠配置 ==========
+set foldmethod=indent              " 用缩进定义折叠
+set foldnestmax=10                 " 折叠最大嵌套层数
+set nofoldenable                   " 默认不启用代码折叠
+set foldlevel=2                    " 初始折叠级别
 
-syntax enable
-filetype indent on
-filetype on
+" ========== 鼠标和语法配置 ==========
+set mouse+=a                       " 启用鼠标支持
 
-let mapleader=" "
+syntax enable                      " 启用语法高亮
+filetype indent on                 " 开启文件类型检测缩进
+filetype on                        " 开启文件类型检测
 
-" Buffers Navigation
-nnoremap <S-h> :bprevious<CR>
-nnoremap <S-l> :bnext<CR>
-nnoremap <Leader>bh :bprevious<CR>
-nnoremap <Leader>bl :bnext<CR>
-nnoremap <Leader>bk :blast<CR>
-nnoremap <Leader>bj :bfirst<CR>
-nnoremap <Leader>bc :bd<CR>
-nnoremap <Leader>bs :buffers<CR>
+" ========== Leader 键定义 ==========
+let mapleader=" "                  " 定义 Leader 键为空格
+
+" ========== 缓冲区导航 ==========
+nnoremap <S-h> :bprevious<CR>      " Shift+h 上一个缓冲区
+nnoremap <S-l> :bnext<CR>          " Shift+l 下一个缓冲区
+nnoremap <Leader>bh :bprevious<CR> " Leader+bh 上一个缓冲区
+nnoremap <Leader>bl :bnext<CR>     " Leader+bl 下一个缓冲区
+nnoremap <Leader>bk :blast<CR>     " Leader+bk 最后一个缓冲区
+nnoremap <Leader>bj :bfirst<CR>    " Leader+bj 第一个缓冲区
+nnoremap <Leader>bc :bd<CR>        " Leader+bc 关闭当前缓冲区
+nnoremap <Leader>bs :buffers<CR>   " Leader+bs 列出所有缓冲区
 nnoremap <Leader>be :edit 
 
-" Windows Navigation
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-nnoremap <Leader>wh <c-w>h
-nnoremap <Leader>wj <c-w>j
-nnoremap <Leader>wk <c-w>k
-nnoremap <Leader>wl <c-w>l
-nnoremap <Leader>wc <c-w>c
-nnoremap <Leader>w- :split<CR>
-nnoremap <Leader>w| :vsplit<CR>
-nnoremap <Leader>wt :bo term<CR>
+" ========== 窗口导航 ==========
+" 使用 Ctrl+hjkl 快速切换窗口
+nnoremap <c-h> <c-w>h              " Ctrl+h 移到左窗口
+nnoremap <c-j> <c-w>j              " Ctrl+j 移到下窗口
+nnoremap <c-k> <c-w>k              " Ctrl+k 移到上窗口
+nnoremap <c-l> <c-w>l              " Ctrl+l 移到右窗口
 
-" edit
-nnoremap <TAB> >>
-nnoremap <s-TAB> <<
-vnoremap <TAB> >gv
-vnoremap <s-TAB> <gv
+" 使用 Leader+w 管理窗口
+nnoremap <Leader>wh <c-w>h          " Leader+wh 移到左窗口
+nnoremap <Leader>wj <c-w>j          " Leader+wj 移到下窗口
+nnoremap <Leader>wk <c-w>k          " Leader+wk 移到上窗口
+nnoremap <Leader>wl <c-w>l          " Leader+wl 移到右窗口
+nnoremap <Leader>wc <c-w>c          " Leader+wc 关闭当前窗口
+nnoremap <Leader>w- :split<CR>      " Leader+w- 水平分割窗口
+nnoremap <Leader>w| :vsplit<CR>     " Leader+w| 竖直分割窗口
+nnoremap <Leader>wt :bo term<CR>    " Leader+wt 打开终端
 
-nnoremap <Leader>gd :action GotoDeclaration<CR>
-nnoremap <Leader>gi :action GotoImplementation<CR>
-nnoremap <Leader>ge :action GotoNextError<CR>
-nnoremap <Leader>gE :action GotoPreviousError<CR>
-nnoremap <Leader>gu :action FindUsages<CR>
+" ========== 编辑操作 ==========
+nnoremap <TAB> >>                   " Tab 键右缩进
+nnoremap <s-TAB> <<                 " Shift+Tab 键左缩进
+vnoremap <TAB> >gv                  " 选中模式下右缩进
+vnoremap <s-TAB> <gv                " 选中模式下左缩进
 
-nnoremap <Leader>nh :noh<CR>
+" ========== 代码导航 ==========
+nnoremap <Leader>gd :action GotoDeclaration<CR>     " 转到声明
+nnoremap <Leader>gi :action GotoImplementation<CR>  " 转到实现
+nnoremap <Leader>ge :action GotoNextError<CR>       " 转到下一个错误
+nnoremap <Leader>gE :action GotoPreviousError<CR>   " 转到上一个错误
+nnoremap <Leader>gu :action FindUsages<CR>          " 查找用法
 
-vnoremap J :move '>+1<CR>gv-gv
-vnoremap K :move '<-2<CR>gv-gv
+nnoremap <Leader>nh :noh<CR>        " 取消搜索高亮
 
-vnoremap p "_dP
+" ========== 行移动 ==========
+vnoremap J :move '>+1<CR>gv-gv      " 选中行向下移一行
+vnoremap K :move '<-2<CR>gv-gv      " 选中行向上移一行
 
-nnoremap <c-s> :w<CR> 'save file'
+" ========== 粘贴操作 ==========
+vnoremap p "_dP                     " 粘贴后保留原剪贴板内容
 
-inoremap jk <Esc>
+" ========== 快速保存 ==========
+nnoremap <c-s> :w<CR>               " Ctrl+s 快速保存文件
+
+" ========== 插入模式快捷键 ==========
+inoremap jk <Esc>                  " jk 快速退出插入模式
 
