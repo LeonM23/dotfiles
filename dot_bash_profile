@@ -45,10 +45,11 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # ============================================================================
-# Homebrew 镜像配置: 使用国内清华大学镜像加速下载
+# Homebrew 镜像配置: 清华大学 TUNA（适配 Homebrew 4.x+）
 # ============================================================================
-# 这些环境变量配置可显著加快 Homebrew 的下载速度（针对中国用户）
-# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+# Homebrew 4.x 起 Bottle 走 ghcr.io，元数据走 JSON API。
+# 必须同时设置 HOMEBREW_API_DOMAIN + HOMEBREW_BOTTLE_DOMAIN；
+# 旧版阿里云静态 Bottle 源已失效，勿再使用。
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"

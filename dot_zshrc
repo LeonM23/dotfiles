@@ -151,7 +151,8 @@ source $ZSH/oh-my-zsh.sh
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+# Homebrew 镜像已在 ~/.bash_profile 中配置（清华 TUNA：API + Bottle）
+# 勿再设置旧版阿里云 HOMEBREW_BOTTLE_DOMAIN，Homebrew 4.x 起该静态源已失效
 source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export RQSDK_LICENSE=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 
 export RQDATAC_CONF=tcp://license:BK1jZCOoocAmeihO53c_C3VPp3NCIXKL4U0lu37uQf4SKrxm7tk_7fX5c3kOH84FqPAEKE6m-Lrg91USvDLd7J3_HUEc9kWQbZ6UAHWUL7TCejmfb-yEb37bTRu0mqWtBXWACym95H3VPIBPvexIqP4EkDefXfxPxPKqQBA2BrQ=cTn85Q5BsEoUaCZtBxvefVXiGBXmENL_mBEhryA6XaThhXlCOdeW8TTQ1X8vYx_tYZzbcM1XfR6VX40BKNUokPgmFWkWXFREQPAXf8X5p-hvGfMa6GwKrtoNqsqRqiEGTMf0XEu9z2j54ifUu108dtBMuz9Q_vK15oF4dRqcm7c=@rqdatad-pro.ricequant.com:16011 

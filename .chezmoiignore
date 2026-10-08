@@ -1,4 +1,6 @@
-# Ignore on Windows
+# 按操作系统分流：同一逻辑配置用不同路径/文件名，避免互相覆盖
+# - Windows: %APPDATA%\pip\pip.ini
+# - macOS/Linux: ~/.pip/pip.conf
 {{- if eq .chezmoi.os "windows" }}
 .bash_profile
 .bashrc
@@ -6,9 +8,9 @@
 .zshrc.pre-oh-my-zsh
 .zprofile
 .p10k.zsh
-.pip/pip.config
+.pip/pip.conf
 {{- else }}
 theme.omp.json
-AppData/Roaming/pip/pip.ini
+AppData
 {{- end }}
 

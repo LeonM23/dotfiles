@@ -20,8 +20,8 @@
 | **dot_condarc.tmpl** | Conda 包管理器配置 (模板化) | 所有使用 Anaconda/Miniconda 的系统 | 根据操作系统自动设置环境/包存储路径；配置下载镜像 (清华镜像) |
 | **dot_p10k.zsh** | Powerlevel10k 主题配置 | macOS, Linux (Zsh) | 配置 Powerlevel10k 提示符主题的外观和元素 |
 | **theme.omp.json** | Oh My Posh 主题配置 | Windows PowerShell, 跨平台 | 配置 PowerShell 提示符的颜色、字体、显示元素 |
-| **AppData/Roaming/pip/pip.ini** | Python pip 配置 (Windows) | Windows | 配置 pip 软件包管理器的下载镜像 (清华镜像) |
-| **dot_pip/pip.config** | Python pip 配置 (Unix) | Linux, macOS | 配置 pip 软件包管理器的下载镜像 (清华镜像) |
+| **AppData/Roaming/pip/pip.ini** | Python pip 配置 (Windows) | Windows | `%APPDATA%\pip\pip.ini`；内容来自共享模板 `pip-config` |
+| **dot_pip/pip.conf** | Python pip 配置 (Unix) | Linux, macOS | `~/.pip/pip.conf`（注意不是 pip.config）；内容来自共享模板 `pip-config` |
 
 ---
 

@@ -1,3 +1,7 @@
+{{/* 跨平台共用 pip 镜像内容。路径/文件名由各 OS 入口文件决定：
+     - Windows: AppData/Roaming/pip/pip.ini
+     - macOS/Linux: ~/.pip/pip.conf
+     若某 OS 需要不同镜像或选项，可在此用 if eq .chezmoi.os 分支。 */}}
 # ========== 全局配置 ==========
 [global]
 # 使用清华大学 PyPI 镜像以加快包的下载速度

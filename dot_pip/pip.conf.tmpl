@@ -1,0 +1,11 @@
+# ============================================================================
+# pip.conf - Python pip 包管理器配置（Linux/macOS）
+# ============================================================================
+# 说明: Unix 上 pip 只认 ~/.pip/pip.conf 或 ~/.config/pip/pip.conf
+# 用途: 配置国内 PyPI 镜像
+# 适用: Linux / macOS（Windows 见 AppData/Roaming/pip/pip.ini）
+# 分流: .chezmoiignore 在 Windows 上忽略本文件，在 Unix 上忽略 pip.ini
+# 内容: 与 Windows 版共用 .chezmoitemplates/pip-config（镜像相同；若需按 OS 差异，改该模板）
+# ============================================================================
+
+{{ template "pip-config" . }}
